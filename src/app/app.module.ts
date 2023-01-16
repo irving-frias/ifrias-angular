@@ -24,7 +24,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
