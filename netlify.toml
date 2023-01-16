@@ -1,0 +1,9 @@
+[build]
+  publish = "dist/ifrias_angular/browser"
+  base ="/"
+  command = "CI='' ng build && ng run ifrias_angular:server"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
