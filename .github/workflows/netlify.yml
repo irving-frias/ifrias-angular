@@ -1,19 +1,21 @@
 name: Build and Deploy to Netlify
 on:
   push:
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
     steps:
-      - uses: actions/checkout@v2
-
-      # ( Build to ./dist or other directory... )
-
+      - uses: actions/checkout@v3
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: '/dist/ifrias_angular/browser'
+          publish-dir: 'dist/ifrias_angular/browser'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
