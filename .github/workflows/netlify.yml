@@ -14,7 +14,7 @@ jobs:
       - name: Netlify Actions
         uses: nwtgck/actions-netlify@v2.0.0
         with:
-          publish-dir: './../../dist/ifrias_angular/browser'
+          publish-dir: '/dist/ifrias_angular/browser'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
